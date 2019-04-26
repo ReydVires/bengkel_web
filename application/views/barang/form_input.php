@@ -13,6 +13,10 @@
                             <div class="panel-body">
                                 <?php echo form_open('barang/post'); ?>
                                 <div class="form-group">
+                                    <label>ID Barang (ex: AB00)</label>
+                                    <input class="form-control" name="id" placeholder="id barang">
+                                </div>
+                                <div class="form-group">
                                     <label>Nama Barang</label>
                                     <input class="form-control" name="nama" placeholder="nama barang">
                                 </div>

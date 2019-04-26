@@ -27,7 +27,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Suplier</label>
-                                    <select name="suplier" class="form-control">
+                                    <select name="suplier" class="form-control" active="<?php echo $record['suplier']?>">
                                         <?php foreach ($suplier as $s) {
                                             // Sesuaikan dengan supply
                                             echo "<option value='$s->id'>$s->nama</option>";
