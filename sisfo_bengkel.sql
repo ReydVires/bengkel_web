@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2019 at 06:30 PM
+-- Generation Time: Apr 27, 2019 at 01:54 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -41,10 +41,11 @@ CREATE TABLE `alat_berat` (
 --
 
 INSERT INTO `alat_berat` (`id`, `nama`, `suplier_id`, `stok`, `harga`) VALUES
-('AB01', 'Truck', 'S001', 10, 75000000),
-('AB03', 'Crawler Crane', 'S003', 2, 480000000),
+('AB01', 'Truck', 'S001', 15, 57000000),
+('AB03', 'Crawler Crane', 'S004', 2, 480000000),
 ('AB04', 'Wheel Loader', 'S002', 12, 25000000),
-('AB09', 'Bulldozer', 'S001', 8, 79000000),
+('AB05', 'Asphalt Concrete Pavet', 'S002', 50, 20000000),
+('AB09', 'Bulldozer', 'S005', 5, 79000000),
 ('AB10', 'Road Builder', 'S003', 5, 36000000);
 
 -- --------------------------------------------------------
@@ -99,9 +100,12 @@ CREATE TABLE `suplier` (
 --
 
 INSERT INTO `suplier` (`id`, `nama`, `asal`) VALUES
-('S001', 'HINO', 'Tanggerang'),
-('S002', 'Yahaha', 'Jakarta'),
-('S003', 'Yamaha', 'Jepang');
+('S001', 'Hino', 'Kalimantan'),
+('S002', 'Samsung', 'Jakarta'),
+('S003', 'Yamaha', 'Jepang'),
+('S004', 'Maknyuss', 'Bandung'),
+('S005', 'Huawei', 'Korea'),
+('S092', 'Tanza', 'Toronto');
 
 -- --------------------------------------------------------
 
@@ -122,6 +126,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`username`, `password`, `last_login`, `nama_lengkap`) VALUES
 ('admin', '21232f297a57a5a743894a0e4a801fc3', '2019-04-26', 'BOSS'),
+('arsyel', '00f68ee6c59ac6e340f8016c1e2a1a0c', '2019-04-27', 'Arsyel'),
 ('staff', '1253208465b1efa876f982d8a9e73eef', '2019-04-26', 'Staff');
 
 --
