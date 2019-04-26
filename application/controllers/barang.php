@@ -25,15 +25,15 @@ class Barang extends CI_Controller{
             $sup = $this->input->post('suplier');
             $data       = array('id'=>$id,
                                 'nama'=>$nama,
-                                'stok'=>$stok,
+                                'suplier_id'=>$sup,
                                 'harga'=>$harga,
-                                'suplier'=>$sup);
+                                'stok'=>$stok);
             $this->model_barang->post($data);
             redirect('barang');
         }
         else{
-            $this->load->model('model_operator');
-            $data['suplier']=  $this->model_operator->tampildata()->result();
+            $this->load->model('model_suplier');
+            $data['suplier']=  $this->model_suplier->tampilkan_data()->result();
             //$this->load->view('barang/form_input',$data);
             $this->template->load('template','barang/form_input',$data);
         }
@@ -47,19 +47,20 @@ class Barang extends CI_Controller{
             $id         =   $this->input->post('id');
             $nama       =   $this->input->post('nama');
             $stok   = $this->input->post('stok');
-            $suplier   =   $this->input->post('suplier');
+            $sup   =   $this->input->post('suplier');
             $harga      =   $this->input->post('harga');
-            $data       = array('nama'=>$nama,
-                                'suplier'=>$suplier,
-                                'harga'=>$harga,
-                                'stok'=>$stok);
+            $data       = array('id'=>$id,
+                                'nama'=>$nama,
+                                'suplier_id'=>$sup,
+                                'stok'=>$stok,
+                                'harga'=>$harga);
             $this->model_barang->edit($data,$id);
             redirect('barang');
         }
         else{
             $id=  $this->uri->segment(3);
-            $this->load->model('model_operator');
-            $data['suplier']   =  $this->model_operator->tampildata()->result();//$this->model_suplier->tampilkan_data()->result();
+            $this->load->model('model_suplier');
+            $data['suplier'] =  $this->model_suplier->tampilkan_data()->result();
             $data['record']     =  $this->model_barang->get_one($id)->row_array();
             //$this->load->view('barang/form_edit',$data);
             $this->template->load('template','barang/form_edit',$data);

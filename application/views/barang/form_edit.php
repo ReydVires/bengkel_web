@@ -23,18 +23,17 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Harga (Rupiah)</label>
-                                    <input type="text" class="form-control"  name="harga" placeholder="harga">
+                                    <input type="text" class="form-control"  name="harga" value="<?php echo $record['harga']?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Suplier</label>
                                     <select name="suplier" class="form-control">
-                                        <?php foreach ($suplier as $k) {
+                                        <?php foreach ($suplier as $s) {
                                             // Sesuaikan dengan supply
-                                            echo "<option value='$k->username'>$k->nama_lengkap</option>";
+                                            echo "<option value='$s->id'>$s->nama</option>";
                                         } ?>
                                     </select>
                                 </div>
-
                                 <button type="submit" name="submit" class="btn btn-primary btn-sm">Update</button> | 
                                 <?php echo anchor('barang','Kembali',array('class'=>'btn btn-danger btn-sm'))?>
                                 </form>

@@ -55,7 +55,7 @@
                     <li>
                         <a href="<?php echo base_url().'operator'?>"><i class="fa fa-users"></i> Data Admin</a>
                     </li>
-                    <li data-toggle="collapse" data-target="karyawan" class="collapsed">
+                    <li>
                         <a href="<?php echo base_url().'barang'?>"><i class="fa fa-desktop"></i> Monitoring</a>
                     </li>
 					<li>

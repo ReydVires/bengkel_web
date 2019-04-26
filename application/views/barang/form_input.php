@@ -21,7 +21,8 @@
                                     <select name="suplier" class="form-control">
                                         <?php foreach ($suplier as $k) {
                                             // Sesuaikan dengan supply
-                                            echo "<option value='$k->username'>$k->nama_lengkap</option>";
+                                            echo "<option value='$k->id'>$k->nama</option>";
+                                            
                                         } ?>
                                     </select>
                                 </div>
