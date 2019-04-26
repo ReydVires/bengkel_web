@@ -45,19 +45,21 @@ class Barang extends CI_Controller{
        if(isset($_POST['submit'])){
             // proses barang
             $id         =   $this->input->post('id');
-            $nama       =   $this->input->post('nama_barang');
-            $kategori   =   $this->input->post('kategori');
+            $nama       =   $this->input->post('nama');
+            $stok   = $this->input->post('stok');
+            $suplier   =   $this->input->post('suplier');
             $harga      =   $this->input->post('harga');
-            $data       = array('nama_barang'=>$nama,
-                                'kategori_id'=>$kategori,
-                                'harga'=>$harga);
+            $data       = array('nama'=>$nama,
+                                'suplier'=>$suplier,
+                                'harga'=>$harga,
+                                'stok'=>$stok);
             $this->model_barang->edit($data,$id);
             redirect('barang');
         }
         else{
             $id=  $this->uri->segment(3);
-            $this->load->model('model_kategori');
-            $data['kategori']   =  $this->model_kategori->tampilkan_data()->result();
+            $this->load->model('model_operator');
+            $data['suplier']   =  $this->model_operator->tampildata()->result();//$this->model_suplier->tampilkan_data()->result();
             $data['record']     =  $this->model_barang->get_one($id)->row_array();
             //$this->load->view('barang/form_edit',$data);
             $this->template->load('template','barang/form_edit',$data);

@@ -1,7 +1,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="page-header">
-                            BENGKEL <small>Tambah Data Operator</small>
+                            Admin/Staff Bengkel <small>Tambah Staff</small>
                         </h2>
                     </div>
                 </div> 

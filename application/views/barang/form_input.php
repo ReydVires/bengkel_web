@@ -1,7 +1,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="page-header">
-                            BENGKEL <small>Tambah Data Barang</small>
+                            Monitoring Peralatan <small>Tambah Data Barang</small>
                         </h2>
                     </div>
                 </div> 
@@ -20,7 +20,8 @@
                                     <label>Suplier</label>
                                     <select name="suplier" class="form-control">
                                         <?php foreach ($suplier as $k) {
-                                            echo "<option value='$k->suplier_id'>$k->nama</option>";
+                                            // Sesuaikan dengan supply
+                                            echo "<option value='$k->username'>$k->nama_lengkap</option>";
                                         } ?>
                                     </select>
                                 </div>

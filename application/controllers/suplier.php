@@ -1,9 +1,9 @@
 <?php
-class kategori extends CI_Controller{
+class suplier extends CI_Controller{
     
     function __construct() {
         parent::__construct();
-        $this->load->model('model_kategori');
+        $this->load->model('suplier');
         chek_session();
     }
     
@@ -24,12 +24,12 @@ class kategori extends CI_Controller{
     {
         if(isset($_POST['submit'])){
             // proses kategori
-            $this->model_kategori->post();
-            redirect('kategori');
+            $this->model_suplier->post();
+            redirect('suplier');
         }
         else{
             //$this->load->view('kategori/form_input');
-            $this->template->load('template','kategori/form_input');
+            $this->template->load('template','suplier/form_input');
         }
     }
     
@@ -37,14 +37,14 @@ class kategori extends CI_Controller{
     {
         if(isset($_POST['submit'])){
             // proses kategori
-            $this->model_kategori->edit();
-            redirect('kategori');
+            $this->model_suplier->edit();
+            redirect('suplier');
         }
         else{
             $id=  $this->uri->segment(3);
-            $data['record']=  $this->model_kategori->get_one($id)->row_array();
+            $data['record']=  $this->model_suplier->get_one($id)->row_array();
             //$this->load->view('kategori/form_edit',$data);
-            $this->template->load('template','kategori/form_edit',$data);
+            $this->template->load('template','suplier/form_edit',$data);
         }
     }
     
@@ -52,7 +52,7 @@ class kategori extends CI_Controller{
     function delete()
     {
         $id=  $this->uri->segment(3);
-        $this->model_kategori->delete($id);
-        redirect('kategori');
+        $this->model_suplier->delete($id);
+        redirect('suplier');
     }
 }

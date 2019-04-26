@@ -1,7 +1,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="page-header">
-                            POS (Point of Sale) <small>Tambah Data Barang</small>
+                            Prosedur Pengadaan Alat <small> Tambah Data Alat</small>
                         </h2>
                     </div>
                 </div> 

@@ -56,10 +56,10 @@
                         <a href="<?php echo base_url().'operator'?>"><i class="fa fa-users"></i> Data Admin</a>
                     </li>
                     <li data-toggle="collapse" data-target="karyawan" class="collapsed">
-                        <a href="<?php echo base_url().'kategori'?>"><i class="fa fa-desktop"></i> Monitoring</a>
+                        <a href="<?php echo base_url().'barang'?>"><i class="fa fa-desktop"></i> Monitoring</a>
                     </li>
 					<li>
-                        <a href="<?php echo base_url().'barang'?>"><i class="fa fa-truck"></i> Pengadaan Alat</a>
+                        <a href="<?php echo base_url().'kategori'?>"><i class="fa fa-truck"></i> Pengadaan Alat</a>
                     </li>
                     
                 </ul>

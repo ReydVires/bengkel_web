@@ -1,7 +1,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="page-header">
-                            BENGKEL <small>Edit Data Operator</small>
+                            Admin/Staff Bengkel <small>Update Staff</small>
                         </h2>
                     </div>
                 </div> 
@@ -27,7 +27,7 @@
                                 </div>
 
                                 <button type="submit" name="submit" class="btn btn-primary btn-sm">Update</button> | 
-                                <?php echo anchor('users','Kembali',array('class'=>'btn btn-danger btn-sm'))?>
+                                <?php echo anchor('operator','Kembali',array('class'=>'btn btn-danger btn-sm'))?>
                                 </form>
                             </div>
                         </div>
