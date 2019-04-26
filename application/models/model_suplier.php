@@ -12,14 +12,21 @@ class Model_suplier extends CI_Model{
     }
     
     function post(){
-        $data=array('nama'=>  $this->input->post('suplier')); // ganti supplier
+        $data = array(
+            'nama' =>  $this->input->post('suplier'),
+            'asal'=> $this->input->post('asal'),
+            'id'=> $this->input->post('id')
+        );
         $this->db->insert('suplier',$data);
     }
     
     
     function edit()
     {
-        $data=array('nama' =>  $this->input->post('suplier')); // ganti suplier
+        $data = array(
+            'nama' =>  $this->input->post('suplier'),
+            'asal'=> $this->input->post('asal')
+        );
         $this->db->where('id',$this->input->post('id'));
         $this->db->update('suplier',$data);
     }
