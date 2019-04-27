@@ -13,34 +13,28 @@
                             <div class="panel-body">
                                 <?php echo form_open('barang/post'); ?>
                                 <div class="form-group">
-                                    <label>ID Barang (ex: AB00)</label>
-                                    <input class="form-control" name="id" placeholder="id barang">
+                                    <label>ID Jadwal (ex: 0000001)</label>
+                                    <input class="form-control" name="id" placeholder="id jadwal">
                                 </div>
                                 <div class="form-group">
-                                    <label>Nama Barang</label>
-                                    <input class="form-control" name="nama" placeholder="nama barang">
+                                    <label>Tahap</label>
+                                    <input class="form-control" name="tahap" placeholder="tahap">
                                 </div>
                                 <div class="form-group">
-                                    <label>Suplier</label>
-                                    <select name="suplier" class="form-control">
-                                        <?php foreach ($suplier as $k) {
-                                            // Sesuaikan dengan supply
-                                            echo "<option value='$k->id'>$k->nama</option>";
-                                            
-                                        } ?>
-                                    </select>
+                                    <label>Mulai</label>
+                                    <input class="form-control" type="date" name="mulai" placeholder="mulai">
                                 </div>
                                 <div class="form-group">
-                                    <label>Stok</label>
-                                    <input class="form-control" name="stok" placeholder="stok">
+                                    <label>Sampai</label>
+                                    <input class="form-control" type="date" name="sampai" placeholder="sampai">
                                 </div>
                                 <div class="form-group">
-                                    <label>Harga</label>
-                                    <input class="form-control" name="harga" placeholder="harga">
+                                    <label>Perubahan</label>
+                                    <input class="form-control" name="perubahan" placeholder="perubahan">
                                 </div>
 
                                 <button type="submit" name="submit" class="btn btn-primary btn-sm">Simpan</button> | 
-                                <?php echo anchor('barang','Kembali',array('class'=>'btn btn-danger btn-sm'))?>
+                                <?php echo anchor('pengadaan','Kembali',array('class'=>'btn btn-danger btn-sm'))?>
                                 </form>
                             </div>
                         </div>
