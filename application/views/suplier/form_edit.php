@@ -1,4 +1,4 @@
-<b>Prosedur Pengadaan Alat</b><small> Update Data Alat</small>
+<b>Suplier</b><small> Update Data Alat</small>
 <?php
 echo form_open('suplier/edit');
 ?>

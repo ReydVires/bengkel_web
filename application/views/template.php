@@ -59,7 +59,7 @@
                         <a href="<?php echo base_url().'barang'?>"><i class="fa fa-desktop"></i> Monitoring</a>
                     </li>
 					<li>
-                        <a href="<?php echo base_url().'suplier'?>"><i class="fa fa-truck"></i> Pengadaan Alat</a>
+                        <a href="<?php echo base_url().'pengadaan'?>"><i class="fa fa-truck"></i> Pengadaan Alat</a>
                     </li>
                     
                 </ul>
