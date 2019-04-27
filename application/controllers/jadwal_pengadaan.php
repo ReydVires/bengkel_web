@@ -32,6 +32,8 @@ class Jadwal_pengadaan extends CI_Controller{
             redirect('jadwal_pengadaan');
         }
         else{
+            $this->load->model('model_jadwal_pengadaan');
+            $data['jadwal_pengadaan']=  $this->model_jadwal_pengadaan->tampil_data()->result();
             $this->template->load('template','jadwal_pengadaan/form_input',$data);
         }
     }
