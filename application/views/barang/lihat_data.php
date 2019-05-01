@@ -21,7 +21,7 @@
                                                 <th>No.</th>
                                                 <th>Nama Alat</th>
                                                 <th>Stok</th>
-                                                <th>Harga (Satuan)</th>
+                                                <th>Status</th>
                                                 <th>Suplier</th>
                                                 <th>Aksi</th>
                                             </tr>
@@ -30,13 +30,13 @@
                                         <?php $no=1; foreach ($record->result() as $r) { ?>
                                             <tr class="gradeU">
                                                 <td><?php echo $no ?></td>
-                                                <td><?php echo $r->nama ?></td>
+                                                <td><?php echo $r->name ?></td>
                                                 <td><?php echo $r->stok ?></td>
-                                                <td><?php echo 'Rp.'.$r->harga ?></td>
+                                                <td><?php echo $r->status ?></td>
                                                 <td><?php echo $r->sup ?></td>
                                                 <td class="center">
-                                                    <?php echo anchor('barang/edit/'.$r->id,'Edit'); ?> | 
-                                                    <?php echo anchor('barang/delete/'.$r->id,'Delete'); ?>
+                                                    <?php echo anchor('barang/edit/'.$r->kode,'Edit'); ?> | 
+                                                    <?php echo anchor('barang/delete/'.$r->kode,'Delete'); ?>
                                                 </td>
                                             </tr>
                                         <?php $no++; } ?>

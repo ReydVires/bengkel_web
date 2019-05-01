@@ -18,7 +18,7 @@ class auth extends CI_Controller{
             {
                 // update last login
                 $this->db->where('username',$username);
-                $this->db->update('users',array('last_login'=>date('Y-m-d')));
+                $this->db->update('admin',array('last_login'=>date('Y-m-d')));
                 $this->session->set_userdata(array('status_login'=>'oke','username'=>$username));
                 redirect('dashboard');
             }

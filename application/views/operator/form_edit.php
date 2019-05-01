@@ -15,7 +15,7 @@
                                 <input type="hidden" value="<?php echo $record['username']?>" name="id">
                                 <div class="form-group">
                                     <label>Nama Lengkap</label>
-                                    <input type="text" class="form-control" name="nama" value="<?php echo $record['nama_lengkap']?>">
+                                    <input type="text" class="form-control" name="nama" value="<?php echo $record['name']?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Username</label>

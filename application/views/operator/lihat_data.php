@@ -29,7 +29,7 @@
                                         <?php $no=1; foreach ($record->result() as $r) { ?>
                                             <tr class="gradeU">
                                                 <td><?php echo $no ?></td>
-                                                <td><?php echo $r->nama_lengkap ?></td>
+                                                <td><?php echo $r->name ?></td>
                                                 <td><?php echo $r->username ?></td>
                                                 <td><?php echo $r->last_login ?></td>
                                                 <td class="center">

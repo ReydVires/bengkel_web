@@ -21,10 +21,10 @@ class operator extends ci_controller{
             $nama       =  $this->input->post('nama',true);
             $username   =  $this->input->post('username',true);
             $password   =  $this->input->post('password',true);
-            $data       =  array(   'nama_lengkap'=>$nama,
+            $data       =  array(   'name'=>$nama,
                                     'username'=>$username,
                                     'password'=>md5($password));
-            $this->db->insert('users',$data);
+            $this->db->insert('admin',$data);
             redirect('operator');
         }
         else{
@@ -41,16 +41,16 @@ class operator extends ci_controller{
             $username   =  $this->input->post('username',true);
             $password   =  $this->input->post('password',true);
             if(empty($password)){
-                 $data  =  array(   'nama_lengkap'=>$nama,
+                 $data  =  array(   'name'=>$nama,
                                     'username'=>$username);
             }
             else{
-                  $data =  array(   'nama_lengkap'=>$nama,
+                  $data =  array(   'name'=>$nama,
                                     'username'=>$username,
                                     'password'=>md5($password));
             }
              $this->db->where('username',$id);
-             $this->db->update('users',$data);
+             $this->db->update('admin',$data);
              redirect('operator');
         }
         else{
@@ -66,7 +66,7 @@ class operator extends ci_controller{
     {
         $id=  $this->uri->segment(3);
         $this->db->where('username',$id);
-        $this->db->delete('users');
+        $this->db->delete('admin');
         redirect('operator');
     }
 }

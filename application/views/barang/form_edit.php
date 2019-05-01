@@ -12,25 +12,43 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <?php echo form_open('barang/edit'); ?>
-                                <input type="hidden" value="<?php echo $record['id']?>" name="id">
+                                <input type="hidden" value="<?php echo $record['kode']?>" name="kode">
                                 <div class="form-group">
                                     <label>Nama Alat</label>
-                                    <input type="text" class="form-control" name="nama" value="<?php echo $record['nama']?>">
+                                    <input type="text" class="form-control" name="nama" value="<?php echo $record['name']?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Stok</label>
                                     <input type="text" class="form-control" name="stok" value="<?php echo $record['stok']?>">
                                 </div>
                                 <div class="form-group">
-                                    <label>Harga (Rupiah)</label>
-                                    <input type="text" class="form-control"  name="harga" value="<?php echo $record['harga']?>">
+                                    <label>Status</label>
+                                    <select name="status" class="form-control" active="#">
+                                        <?php
+                                            $_data = ["DIPAKAI", "DIPINJAM", "DIPERBAIKI", "TIDAK TERSEDIA"];
+                                            
+                                            for ($i=0; $i < count($_data); $i++) { 
+                                                if ($_data[$i] == $record['status']){
+                                                    echo "<option selected value='".$_data[$i]."'>".$_data[$i]."</option>";
+                                                }
+                                                else{
+                                                    echo "<option value='".$_data[$i]."'>".$_data[$i]."</option>";
+                                                }
+                                            }
+                                        ?>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Suplier</label>
-                                    <select name="suplier" class="form-control" active="<?php echo $record['suplier']?>">
+                                    <select name="suplier" class="form-control" active="#">
                                         <?php foreach ($suplier as $s) {
                                             // Sesuaikan dengan supply
-                                            echo "<option value='$s->id'>$s->nama</option>";
+                                            if ($s->id == $record['suplier_id']){
+                                                echo "<option selected value='$s->id'>$s->nama</option>";
+                                            }
+                                            else {
+                                                echo "<option value='$s->id'>$s->nama</option>";
+                                            }
                                         } ?>
                                     </select>
                                 </div>

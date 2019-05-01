@@ -26,7 +26,7 @@
                                 </div>
 
                                 <button type="submit" name="submit" class="btn btn-primary btn-sm">Simpan</button> | 
-                                <?php echo anchor('users','Kembali',array('class'=>'btn btn-danger btn-sm'))?>
+                                <?php echo anchor('operator','Kembali',array('class'=>'btn btn-danger btn-sm'))?>
                                 </form>
                             </div>
                         </div>
