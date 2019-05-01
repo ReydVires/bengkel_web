@@ -25,50 +25,37 @@
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                         <thead>
                                             <tr class="header">
-                                                <td colspan="8">Nama Paket <span>Detail</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Unit</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Pagu</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tahap</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tanggal</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Metode</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lokasi</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jadwal</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Sumber</td>
+                                                <th>No.</th>
+                                                <th>Nama Paket</th>
+                                                <th>Unit</th>
+                                                <th>Pagu</th>
+                                                <th>Tahap</th>
+                                                <th>Tanggal</th>
+                                                <th>Metode</th>
+                                                <th>Lokasi</th>
+                                                <th>Jadwal</th>
+                                                <th>Sumber</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <?php $no=1; foreach ($record->result() as $r) { ?>
                                             <tr class="gradeU">
-                                                <tr class="center">
+                                                
+                                                <td><?php echo $no ?></td>
+                                                <td><?php echo $r->nama_paket ?></td>
+                                                <td><?php echo $r->unit ?></td>
+                                                <td><?php echo $r->pagu ?></td>
+                                                <td><?php echo $r->tahap ?></td>
+                                                <td><?php echo $r->tanggal ?></td>
+                                                <td><?php echo $r->metode ?></td>
+                                                <td><?php echo $r->lokasi ?></td>
+                                                <td class="center"> <?php echo anchor('pengadaan/jadwal/'.$r->id,'Menuju Jadwal'); ?> 
+                                                <td><?php echo $r->sumber ?></td>
+                                                <td class="center">
                                                     <?php echo anchor('pengadaan/edit/'.$r->id,'Edit'); ?> | 
                                                     <?php echo anchor('pengadaan/delete/'.$r->id,'Delete'); ?>
-                                                </tr>
-                                                <tr><?php echo $no ?></tr>
-                                                <tr><?php echo $r->nama_paket ?></tr>
-                                                <tr><?php echo $r->unit ?></tr>
-                                                <tr><?php echo $r->pagu ?></tr>
-                                                <tr><?php echo $r->tahap ?></tr>
-                                                <tr><?php echo $r->tanggal ?></tr>
-                                                <tr><?php echo $r->metode ?></tr>
-                                                <tr><?php echo $r->lokasi ?></tr>
-                                                <tr class="center"> <?php echo anchor('pengadaan/jadwal/'.$r->id,'Lihat Jadwal'); ?> </tr>
-                                                <tr><?php echo $r->sumber ?></tr>
+                                                </td>
                                             </tr>
                                         <?php $no++; } ?>
                                         </tbody>

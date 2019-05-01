@@ -61,7 +61,6 @@
 					<li>
                         <a href="<?php echo base_url().'pengadaan'?>"><i class="fa fa-truck"></i> Pengadaan Alat</a>
                     </li>
-                    
                 </ul>
 
             </div>

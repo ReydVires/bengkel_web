@@ -11,7 +11,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <?php echo form_open('barang/post'); ?>
+                                <?php echo form_open('jadwal_pengadaan/post'); ?>
                                 <div class="form-group">
                                     <label>ID Jadwal (ex: 0000001)</label>
                                     <input class="form-control" name="id" placeholder="id jadwal">
