@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2019 at 12:17 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.4
+-- Generation Time: May 01, 2019 at 01:39 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -75,6 +75,57 @@ INSERT INTO `alat_berat` (`kode`, `name`, `status`, `stok`, `admin_id`, `suplier
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `jadwal_pengadaan`
+--
+
+CREATE TABLE `jadwal_pengadaan` (
+  `id` int(7) NOT NULL,
+  `tahap` varchar(50) NOT NULL,
+  `mulai` date NOT NULL,
+  `sampai` date NOT NULL,
+  `perubahan` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jadwal_pengadaan`
+--
+
+INSERT INTO `jadwal_pengadaan` (`id`, `tahap`, `mulai`, `sampai`, `perubahan`) VALUES
+(1, 'Pemberian Penjelasan	', '2019-04-18', '2019-04-19', 'Tidak ada'),
+(2, 'Pelelangan', '2019-11-29', '2019-12-01', 'Tidak ada'),
+(3, 'Pelelangan', '2019-12-11', '2019-12-15', 'Tidak ada'),
+(4, 'Pembelian Barang', '2019-12-01', '2019-12-04', 'Tidak ada'),
+(9, 'Pelelangan', '2019-11-09', '2019-11-12', 'Tidak ada');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pengadaan_bengkel`
+--
+
+CREATE TABLE `pengadaan_bengkel` (
+  `id` varchar(5) NOT NULL,
+  `nama_paket` varchar(100) NOT NULL,
+  `unit` varchar(100) NOT NULL,
+  `pagu` varchar(50) NOT NULL,
+  `tahap` varchar(60) NOT NULL,
+  `tanggal` varchar(30) NOT NULL,
+  `metode` varchar(100) NOT NULL,
+  `lokasi` varchar(100) NOT NULL,
+  `jadwal` int(5) NOT NULL,
+  `sumber` int(7) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pengadaan_bengkel`
+--
+
+INSERT INTO `pengadaan_bengkel` (`id`, `nama_paket`, `unit`, `pagu`, `tahap`, `tanggal`, `metode`, `lokasi`, `jadwal`, `sumber`) VALUES
+('P0001', 'Pengadaan barang persediaan pemeliharaan gedung dan bangunan KPK Tahap 1 Tender Ulang\r\n', 'LPSE Kementerian Keuangan\r\n', 'Rp 304.693.180,00 (304 JT)', 'Tidak Ada Jadwal', '26-April-2019 s/d 03-Mei-2019', 'Tender Cepat - Pascakualifikasi Satu File - Harga Terendah Sistem Gugur\r\n', 'Gedung KPK - Jakarta Selatan (Kota)\r\n', 1, 1128);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `suplier`
 --
 
@@ -113,6 +164,19 @@ ALTER TABLE `alat_berat`
   ADD KEY `FK_alat_beratSuplier` (`suplier_id`);
 
 --
+-- Indexes for table `jadwal_pengadaan`
+--
+ALTER TABLE `jadwal_pengadaan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pengadaan_bengkel`
+--
+ALTER TABLE `pengadaan_bengkel`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_JadwalPengadaan` (`jadwal`);
+
+--
 -- Indexes for table `suplier`
 --
 ALTER TABLE `suplier`
@@ -128,6 +192,12 @@ ALTER TABLE `suplier`
 ALTER TABLE `alat_berat`
   ADD CONSTRAINT `FK_alat_beratAdmin` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`username`),
   ADD CONSTRAINT `FK_alat_beratSuplier` FOREIGN KEY (`suplier_id`) REFERENCES `suplier` (`id`);
+
+--
+-- Constraints for table `pengadaan_bengkel`
+--
+ALTER TABLE `pengadaan_bengkel`
+  ADD CONSTRAINT `FK_JadwalPengadaan` FOREIGN KEY (`jadwal`) REFERENCES `jadwal_pengadaan` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
