@@ -9,15 +9,7 @@ class Pengadaan extends CI_Controller{
     }
     
     function index(){
-        $this->load->library('pagination');
-        $config['base_url'] = base_url().'index.php/kategori/index/';
-        $config['total_rows'] = $this->model_pengadaan->tampilkan_data()->num_rows();
-        $config['per_page'] = 3; 
-        $this->pagination->initialize($config); 
-        $data['paging']     =$this->pagination->create_links();
-        $halaman            =  $this->uri->segment(3);
-        $halaman            =$halaman==''?0:$halaman;
-        $data['record']     =    $this->model_pengadaan->tampilkan_data_paging($halaman,$config['per_page']);
+        $data['record'] = $this->model_pengadaan->tampil_data();
         $this->template->load('template','pengadaan/lihat_data',$data);
     }
     
@@ -33,7 +25,6 @@ class Pengadaan extends CI_Controller{
             $tanggal      =   $this->input->post('tanggal');
             $metode      =   $this->input->post('metode');
             $lokasi      =   $this->input->post('lokasi');
-            $jadwal      =   $this->input->post('jadwal');
             $sumber      =   $this->input->post('sumber');
             $data       = array('id'=>$id,
                                 'nama_paket'=>$nama_paket,
@@ -43,14 +34,14 @@ class Pengadaan extends CI_Controller{
                                 'tanggal'=>$tanggal,
                                 'metode'=>$metode,
                                 'lokasi'=>$lokasi,
-                                'jadwal'=>$jadwal,
                                 'sumber'=>$sumber);
             $this->model_pengadaan->post($data);
             redirect('pengadaan');
         }
         else{
-            //$this->load->view('post/form_input');
-            $this->template->load('template','pengadaan/form_input');
+            $this->load->model('model_pengadaan');
+            $data['pengadaan']=  $this->model_pengadaan->tampil_data();
+            $this->template->load('template','pengadaan/form_input',$data);
         }
     }
 
@@ -62,7 +53,7 @@ class Pengadaan extends CI_Controller{
         }
         else{
             //$this->load->view('kategori/form_input');
-            $data['record'] = $this->model_jadwal_pengadaan->tampil_data();
+            $data['record'] = $this->model_jadwal_pengadaan->get_one();
             $this->template->load('template','jadwal_pengadaan/lihat_data',$data);
         }
     }
@@ -79,7 +70,6 @@ class Pengadaan extends CI_Controller{
             $tanggal      =   $this->input->post('tanggal');
             $metode      =   $this->input->post('metode');
             $lokasi      =   $this->input->post('lokasi');
-            $jadwal      =   $this->input->post('jadwal');
             $sumber      =   $this->input->post('sumber');
             $data       = array('id'=>$id,
                                 'nama_paket'=>$nama_paket,
@@ -89,7 +79,6 @@ class Pengadaan extends CI_Controller{
                                 'tanggal'=>$tanggal,
                                 'metode'=>$metode,
                                 'lokasi'=>$lokasi,
-                                'jadwal'=>$jadwal,
                                 'sumber'=>$sumber);
             $this->model_pengadaan->edit($data);            
             redirect('pengadaan');

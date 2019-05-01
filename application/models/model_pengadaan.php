@@ -6,15 +6,14 @@ class Model_Pengadaan extends CI_Model{
         return $this->db->get('pengadaan_bengkel');
     }
     
-    function tampilkan_data_paging($halaman,$batas)
+    function tampil_data()
     {
         return $this->db->query("select * from pengadaan_bengkel");
     }
     
-    function post(){
+    function post($data){
         $this->db->insert('pengadaan_bengkel',$data);
     }
-    
     
     function edit()
     {
