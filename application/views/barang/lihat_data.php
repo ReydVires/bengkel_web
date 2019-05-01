@@ -20,7 +20,6 @@
                                             <tr>
                                                 <th>No.</th>
                                                 <th>Nama Alat</th>
-                                                <th>Stok</th>
                                                 <th>Status</th>
                                                 <th>Suplier</th>
                                                 <th>Aksi</th>
@@ -31,7 +30,6 @@
                                             <tr class="gradeU">
                                                 <td><?php echo $no ?></td>
                                                 <td><?php echo $r->name ?></td>
-                                                <td><?php echo $r->stok ?></td>
                                                 <td><?php echo $r->status ?></td>
                                                 <td><?php echo $r->sup ?></td>
                                                 <td class="center">

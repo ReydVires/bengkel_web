@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/tugas_web/';
+$config['base_url']	= 'http://localhost/bengkel_web/';
 
 /*
 |--------------------------------------------------------------------------

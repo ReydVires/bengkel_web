@@ -22,7 +22,8 @@ img{max-width:100%;}
 /*end reset*/
 /****-----start-body----****/
 body{
-	background-image: url(../img/oren.jpg);
+	/* background-image: url(../img/oren.jpg); */
+	background-color: #2C3E50;
 	background-size: cover;
 }
 .main{

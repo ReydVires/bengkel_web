@@ -17,9 +17,15 @@ class model_operator extends CI_Model{
         return $this->db->get('admin');
     }
     
-    function get_one($id)
+    function get_one($username)
     {
-        $param  =   array('username'=>$id);
-        return $this->db->get_where('admin',$param);
+        $param  =   array('username'=>$username);
+        return $this->db->get_where('admin', $param);
+    }
+
+    function get_name($id)
+    {
+        $this->db->select('name');
+        return $this->db->get_where('admin', array('username'=>$id));
     }
 }

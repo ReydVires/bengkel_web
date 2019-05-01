@@ -11,22 +11,21 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <?php echo form_open('barang/edit'); ?>
+                                <?php 
+                                    echo form_open('barang/edit'); 
+                                    $admin_id = $this->session->userdata('username');
+                                ?>
                                 <input type="hidden" value="<?php echo $record['kode']?>" name="kode">
+                                <input type='hidden' value="<?php echo $admin_id ?>" name='admin_id'>
                                 <div class="form-group">
                                     <label>Nama Alat</label>
                                     <input type="text" class="form-control" name="nama" value="<?php echo $record['name']?>">
                                 </div>
                                 <div class="form-group">
-                                    <label>Stok</label>
-                                    <input type="text" class="form-control" name="stok" value="<?php echo $record['stok']?>">
-                                </div>
-                                <div class="form-group">
                                     <label>Status</label>
                                     <select name="status" class="form-control" active="#">
                                         <?php
-                                            $_data = ["DIPAKAI", "DIPINJAM", "DIPERBAIKI", "TIDAK TERSEDIA"];
-                                            
+                                            $_data = $stat; /*["DIPAKAI", "DIPINJAM", "DIPERBAIKI", "TIDAK TERSEDIA"];*/
                                             for ($i=0; $i < count($_data); $i++) { 
                                                 if ($_data[$i] == $record['status']){
                                                     echo "<option selected value='".$_data[$i]."'>".$_data[$i]."</option>";

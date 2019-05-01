@@ -31,9 +31,6 @@
 						<div class="submit">
 						  <input type="submit" name="submit" value="LOGIN" >
 						</div>
-						<span class="forget-pass">
-							<a href="#">Forgot Password?</a>
-						</span>
 							<div class="clear"> </div>
 					</div>
 					</form>

@@ -10,6 +10,7 @@ class Barang extends CI_Controller{
 
     function index()
     {
+        $data['stat'] = $this->model_barang->get_all_status();
         $data['record'] = $this->model_barang->tampil_data();
         $this->template->load('template','barang/lihat_data',$data);
     }
@@ -18,16 +19,17 @@ class Barang extends CI_Controller{
     {
         if(isset($_POST['submit'])){
             // proses barang
-            $id       =   $this->input->post('kode');
-            $nama   =   $this->input->post('name');
-            $stok      =   $this->input->post('stok');
-            $harga      =   $this->input->post('harga');
+            $id = $this->input->post('kode');
+            $nama = $this->input->post('nama');
+            $status = $this->input->post('status');
             $sup = $this->input->post('suplier');
-            $data       = array('id'=>$id,
-                                'nama'=>$nama,
-                                'suplier_id'=>$sup,
-                                'harga'=>$harga,
-                                'stok'=>$stok);
+            $admin_id = $this->input->post('admin_id');
+            $data = array('kode'=>$id,
+                            'name'=>$nama,
+                            'status'=>$status,
+                            'admin_id'=>'admin',
+                            'suplier_id'=>$sup,
+                            'pengadaan_id'=>'P0001');
             $this->model_barang->post($data);
             redirect('barang');
         }
@@ -35,6 +37,7 @@ class Barang extends CI_Controller{
             $this->load->model('model_suplier');
             $data['suplier']=  $this->model_suplier->tampilkan_data()->result();
             //$this->load->view('barang/form_input',$data);
+            $data['stat'] = $this->model_barang->get_all_status();
             $this->template->load('template','barang/form_input',$data);
         }
     }
@@ -46,13 +49,12 @@ class Barang extends CI_Controller{
             // proses barang
             $id         =   $this->input->post('kode');
             $nama       =   $this->input->post('nama');
-            $stok   = $this->input->post('stok');
             $status   =   $this->input->post('status');
             $sup   =   $this->input->post('suplier');
+            $admin_id = $this->input->post('admin_id');
             $data       = array('kode'=>$id,
                                 'name'=>$nama,
                                 'status'=>$status,
-                                'stok'=>$stok,
                                 'admin_id'=>'admin',
                                 'suplier_id'=>$sup,
                                 'pengadaan_id'=>'P0001');
@@ -63,6 +65,7 @@ class Barang extends CI_Controller{
             $id=  $this->uri->segment(3);
             $this->load->model('model_suplier');
             $data['suplier'] =  $this->model_suplier->tampilkan_data()->result();
+            $data['stat'] = $this->model_barang->get_all_status();
             $data['record']     =  $this->model_barang->get_one($id)->row_array();
             //$this->load->view('barang/form_edit',$data);
             $this->template->load('template','barang/form_edit',$data);
