@@ -45,12 +45,6 @@
                                     <input type="text" name="lokasi" class="form-control" placeholder="lokasi">
                                 </div>
                                 <div class="form-group">
-                                    <label>Jadwal</label>
-                                    <div class="panel-heading">
-                                        <?php echo anchor('Jadwal_pengadaan/post','Tambah Jadwal',array('class'=>'btn btn-primary btn-sm')) ?>
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <label>Sumber</label>
                                     <input type="text" name="sumber" class="form-control" placeholder="sumber">
                                 </div>

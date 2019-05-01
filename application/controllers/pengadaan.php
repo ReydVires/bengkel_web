@@ -4,6 +4,7 @@ class Pengadaan extends CI_Controller{
     function __construct() {
         parent::__construct();
         $this->load->model('model_pengadaan');
+        $this->load->model('model_jadwal_pengadaan');
         chek_session();
     }
     
@@ -61,7 +62,8 @@ class Pengadaan extends CI_Controller{
         }
         else{
             //$this->load->view('kategori/form_input');
-            $this->template->load('template','pengadaan/jadwal_pengadaan');
+            $data['record'] = $this->model_jadwal_pengadaan->tampil_data();
+            $this->template->load('template','jadwal_pengadaan/lihat_data',$data);
         }
     }
     

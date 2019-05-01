@@ -1,7 +1,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="page-header">
-                            Monitoring Peralatan
+                            Jadwal Pengadaan
                         </h2>
                     </div>
                 </div> 
@@ -11,7 +11,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                 <?php echo anchor('barang/post','Tambah Data',array('class'=>'btn btn-danger btn-sm')) ?>
+                                 <?php echo anchor('jadwal_pengadaan/post','Update Jadwal',array('class'=>'btn btn-danger btn-sm')) ?>
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
@@ -19,25 +19,20 @@
                                         <thead>
                                             <tr>
                                                 <th>No.</th>
-                                                <th>Nama Alat</th>
-                                                <th>Stok</th>
-                                                <th>Harga (Satuan)</th>
-                                                <th>Suplier</th>
-                                                <th>Aksi</th>
+                                                <th>Tahap</th>
+                                                <th>Mulai</th>
+                                                <th>Sampai</th>
+                                                <th>Perubahan</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <?php $no=1; foreach ($record->result() as $r) { ?>
                                             <tr class="gradeU">
                                                 <td><?php echo $no ?></td>
-                                                <td><?php echo $r->nama ?></td>
-                                                <td><?php echo $r->stok ?></td>
-                                                <td><?php echo 'Rp.'.$r->harga ?></td>
-                                                <td><?php echo $r->sup ?></td>
-                                                <td class="center">
-                                                    <?php echo anchor('barang/edit/'.$r->id,'Edit'); ?> | 
-                                                    <?php echo anchor('barang/delete/'.$r->id,'Delete'); ?>
-                                                </td>
+                                                <td><?php echo $r->tahap ?></td>
+                                                <td><?php echo $r->mulai ?></td>
+                                                <td><?php echo $r->sampai ?></td>
+                                                <td><?php echo $r->perubahan ?></td>
                                             </tr>
                                         <?php $no++; } ?>
                                         </tbody>
