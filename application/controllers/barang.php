@@ -24,18 +24,21 @@ class Barang extends CI_Controller{
             $status = $this->input->post('status');
             $sup = $this->input->post('suplier');
             $admin_id = $this->input->post('admin_id');
+            $pengadaan_id = $this->input->post('pengadaan_id');
             $data = array('kode'=>$id,
                             'name'=>$nama,
                             'status'=>$status,
                             'admin_id'=>'admin',
                             'suplier_id'=>$sup,
-                            'pengadaan_id'=>'P0001');
+                            'pengadaan_id'=>$pengadaan_id);
             $this->model_barang->post($data);
             redirect('barang');
         }
         else{
             $this->load->model('model_suplier');
             $data['suplier']=  $this->model_suplier->tampilkan_data()->result();
+            $this->load->model('model_pengadaan');
+            $data['pengadaan']= $this->model_pengadaan->tampilkan_data()->result();
             //$this->load->view('barang/form_input',$data);
             $data['stat'] = $this->model_barang->get_all_status();
             $this->template->load('template','barang/form_input',$data);

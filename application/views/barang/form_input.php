@@ -15,7 +15,7 @@
                                 <input type='hidden' value="<?php echo $this->session->userdata('username'); ?>" name='admin_id'>
                                 <div class="form-group">
                                     <label>ID Barang (ex: AB001)</label>
-                                    <input class="form-control" name="id" placeholder="id barang">
+                                    <input class="form-control" name="kode" placeholder="id barang">
                                 </div>
                                 <div class="form-group">
                                     <label>Nama Barang</label>
@@ -42,10 +42,16 @@
                                         ?>
                                     </select>
                                 </div>
-                                <!-- <div class="form-group">
-                                    <label>Status</label>
-                                    <input class="form-control" name="status" placeholder="status">
-                                </div> -->
+                                <div class="form-group">
+                                    <label>ID Pengadaan</label>
+                                    <select class="form-control" name="pengadaan_id" active="#">
+                                        <?php 
+                                        foreach ($pengadaan as $p) {
+                                            echo "<option value='$p->id'>$p->nama_paket</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
                                 <button type="submit" name="submit" class="btn btn-primary btn-sm">Simpan</button> | 
                                 <?php echo anchor('barang','Kembali',array('class'=>'btn btn-danger btn-sm'))?>
                                 </form>
