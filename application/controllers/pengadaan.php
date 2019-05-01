@@ -53,7 +53,7 @@ class Pengadaan extends CI_Controller{
         }
         else{
             //$this->load->view('kategori/form_input');
-            $data['record'] = $this->model_jadwal_pengadaan->get_one();
+            $data['record'] = $this->model_jadwal_pengadaan->tampil_data();
             $this->template->load('template','jadwal_pengadaan/lihat_data',$data);
         }
     }
