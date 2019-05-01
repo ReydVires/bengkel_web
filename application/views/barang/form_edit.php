@@ -1,7 +1,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="page-header">
-                            Monitoring Peralatan <small>Update Data Barang</small>
+                            Monitoring Peralatan <small>Update Alat</small>
                         </h2>
                     </div>
                 </div> 

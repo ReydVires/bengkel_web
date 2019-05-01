@@ -33,8 +33,8 @@
                                                 <td><?php echo $r->username ?></td>
                                                 <td><?php echo $r->last_login ?></td>
                                                 <td class="center">
-                                                    <?php echo anchor('operator/edit/'.$r->username,'Edit'); ?> | 
-                                                    <?php echo anchor('operator/delete/'.$r->username,'Delete'); ?>
+                                                    <?php echo anchor('operator/edit/'.$r->username,'<span class="fa fa-pencil"> ') ?> | 
+                                                    <?php echo anchor('operator/delete/'.$r->username,' <span class="fa fa-trash-o">') ?>
                                                 </td>
                                             </tr>
                                         <?php $no++; } ?>

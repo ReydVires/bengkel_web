@@ -33,8 +33,8 @@
                                                 <td><?php echo $r->status ?></td>
                                                 <td><?php echo $r->sup ?></td>
                                                 <td class="center">
-                                                    <?php echo anchor('barang/edit/'.$r->kode,'Edit'); ?> | 
-                                                    <?php echo anchor('barang/delete/'.$r->kode,'Delete'); ?>
+                                                    <?php echo anchor('barang/edit/'.$r->kode,'<span class="fa fa-pencil"> ') ?> | 
+                                                    <?php echo anchor('barang/delete/'.$r->kode,' <span class="fa fa-trash-o">') ?>
                                                 </td>
                                             </tr>
                                         <?php $no++; } ?>

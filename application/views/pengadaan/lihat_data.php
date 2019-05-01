@@ -53,8 +53,8 @@
                                                 <td class="center"> <?php echo anchor('pengadaan/jadwal/'.$r->id,'Menuju Jadwal'); ?> 
                                                 <td><?php echo $r->sumber ?></td>
                                                 <td class="center">
-                                                    <?php echo anchor('pengadaan/edit/'.$r->id,'Edit'); ?> | 
-                                                    <?php echo anchor('pengadaan/delete/'.$r->id,'Delete'); ?>
+                                                    <?php echo anchor('pengadaan/edit/'.$r->id,'<span class="fa fa-pencil">') ?> | 
+                                                    <?php echo anchor('pengadaan/delete/'.$r->id,' <span class="fa fa-trash-o">') ?>
                                                 </td>
                                             </tr>
                                         <?php $no++; } ?>

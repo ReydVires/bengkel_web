@@ -31,8 +31,8 @@
                                                 <td><?php echo $r->nama ?></td>
                                                 <td><?php echo $r->asal ?></td>
                                                 <td class="center">
-                                                    <?php echo anchor('suplier/edit/'.$r->id,'Edit'); ?> | 
-                                                    <?php echo anchor('suplier/delete/'.$r->id,'Delete'); ?>
+                                                    <?php echo anchor('suplier/edit/'.$r->id,'<span class="fa fa-pencil"> ') ?> | 
+                                                    <?php echo anchor('suplier/delete/'.$r->id,' <span class="fa fa-trash-o">') ?>
                                                 </td>
                                             </tr>
                                         <?php $no++; } ?>
