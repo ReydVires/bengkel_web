@@ -17,7 +17,7 @@ class Model_Pengadaan extends CI_Model{
     
     function edit()
     {
-        $this->db->where('id',$this->input->post('id'));
+        $this->db->where('id',array('id'=>$data['id']));
         $this->db->update('pengadaan_bengkel',$data);
     }
     

@@ -26,6 +26,7 @@ class Pengadaan extends CI_Controller{
             $metode      =   $this->input->post('metode');
             $lokasi      =   $this->input->post('lokasi');
             $sumber      =   $this->input->post('sumber');
+            $jadwal = $this->input->post('jadwal_id');
             $data       = array('id'=>$id,
                                 'nama_paket'=>$nama_paket,
                                 'unit'=>$unit,
@@ -34,6 +35,7 @@ class Pengadaan extends CI_Controller{
                                 'tanggal'=>$tanggal,
                                 'metode'=>$metode,
                                 'lokasi'=>$lokasi,
+                                'jadwal'=>$jadwal,
                                 'sumber'=>$sumber);
             $this->model_pengadaan->post($data);
             redirect('pengadaan');
@@ -71,6 +73,7 @@ class Pengadaan extends CI_Controller{
             $metode      =   $this->input->post('metode');
             $lokasi      =   $this->input->post('lokasi');
             $sumber      =   $this->input->post('sumber');
+            $jadwal = $this->input->post('jadwal_id');
             $data       = array('id'=>$id,
                                 'nama_paket'=>$nama_paket,
                                 'unit'=>$unit,
@@ -79,6 +82,7 @@ class Pengadaan extends CI_Controller{
                                 'tanggal'=>$tanggal,
                                 'metode'=>$metode,
                                 'lokasi'=>$lokasi,
+                                'jadwal'=>$jadwal,
                                 'sumber'=>$sumber);
             $this->model_pengadaan->edit($data);            
             redirect('pengadaan');

@@ -12,6 +12,7 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <?php echo form_open('pengadaan/post'); ?>
+                                <input type='hidden' name='jadwal_id' value='1'>
                                 <div class="form-group">
                                     <label>ID Pengadaan (ex: P0001)</label>
                                     <input type="text" name="id" class="form-control" placeholder="id pengadaan">
