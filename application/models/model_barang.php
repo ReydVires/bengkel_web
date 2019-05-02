@@ -25,7 +25,7 @@ class model_barang extends ci_model{
 
     function get_all_status()
     {
-        return ["DIPAKAI", "DIPINJAM", "DIPERBAIKI", "TIDAK TERSEDIA"];
+        return ["DIPAKAI", "DISEWAKAN", "DIPERBAIKI", "RUSAK"];
     }
     
     function edit($data, $id)
