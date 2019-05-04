@@ -3,6 +3,7 @@
 echo form_open('pengadaan/edit');
 ?>
 <input type="hidden" value="<?php echo $record['id']?>" name="id">
+<input type="hidden" value="<?php echo $record['jadwal']?>" name="jadwal_id">
 <table class="table table-bordered">
     <tr>
       <td width="130">Nama Paket</td>
